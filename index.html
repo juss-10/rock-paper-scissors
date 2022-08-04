@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/scripts/index.js" defer></script>
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <header class="site-header">
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <main>
+        <section class="boardgame">
+            <div class="scoreboard-container">
+                <div class="scoreboard">
+                    <h2 class="game-status">Let's get things rollin'</h2>
+                    <div class="players">
+                        <div class="player-container player">
+                            <div>player</div>
+                            <div id="player-hand" class="hand-container">?</div>
+                            <div id="player-points" class="points">0 point(s)</div>
+                        </div>
+                        <div class="vs">vs</div>
+                        <div class="player-container computer">
+                            <div>computer</div>
+                            <div id="computer-hand" class="hand-container">?</div>
+                            <div id="computer-points" class="points">0 point(s)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="game-hands">
+                <div class="game-hand-container">
+                    <div class="hand btn">🪨</div>
+                    <div class="hand-title">rock</div>
+                </div>
+                <div class="game-hand-container">
+                    <div class="hand btn">📃</div>
+                    <div class="hand-title">paper</div>
+                </div>
+                <div class="game-hand-container">
+                    <div class="hand btn">✂️</div>
+                    <div class="hand-title">scissors</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>copyright &copy; 2022 <span class="link-icon"><a href="https://github.com/juss-10">juss-10</a></span></p>
+    </footer>
+</body>
+</html>
