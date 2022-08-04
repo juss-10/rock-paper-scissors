@@ -6,6 +6,7 @@ const playerPointsEl = document.querySelector("#player-points");
 const computerPointsEl = document.querySelector("#computer-points");
 const playerHand = document.querySelector("#player-hand");
 const computerHand = document.querySelector("#computer-hand");
+const playAgainBtn = document.querySelector("#play-again");
 
 handElements.forEach(hand => hand.addEventListener("click", renderGame))
 
@@ -115,4 +116,22 @@ function checkScoreboard() {
     if (!gameWinner) return;
 
     gameStatus.textContent = gameWinner;
+    playAgain()
 }
+
+function playAgain() {
+    playAgainBtn.style.display = "flex";
+    document.querySelector("#reset-game").addEventListener("click", resetGame)
+}
+
+function resetGame() {
+    playAgainBtn.style.display = "none";
+    playerPoints = 0;
+    computerPoints = 0;
+    playerHand.textContent = "?";
+    computerHand.textContent = "?";
+    playerPointsEl.textContent = "0 point(s)";
+    computerPointsEl.textContent = "0 point(s)";
+    gameStatus.textContent = "Let's get things rollin'";
+
+} 
