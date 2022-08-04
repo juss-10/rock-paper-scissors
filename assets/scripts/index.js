@@ -1,7 +1,11 @@
-
-const handElements = [...document.querySelectorAll(".game-hand-container")];
 let playerPoints = 0;
 let computerPoints = 0;
+const handElements = [...document.querySelectorAll(".game-hand-container")];
+const gameStatus = document.querySelector("#game-status");
+const playerPointsEl = document.querySelector("#player-points");
+const computerPointsEl = document.querySelector("#computer-points");
+const playerHand = document.querySelector("#player-hand");
+const computerHand = document.querySelector("#computer-hand");
 
 handElements.forEach(hand => hand.addEventListener("click", renderGame))
 
@@ -40,6 +44,7 @@ function renderGame(e) {
     const round = playRound(getPlayerChoice(e), getComputerChoice());
     displayRound(round)
     updatePoints(round)
+    checkScoreboard()
 }
 
 function playRound(playerChoice, computerChoice) {
@@ -75,23 +80,39 @@ function playRound(playerChoice, computerChoice) {
 }
 
 function displayRound(round) {
-    const playerHand = document.querySelector("#player-hand");
-    const computerHand = document.querySelector("#computer-hand");
-
     playerHand.textContent = round.playerChoice.emoji;
     computerHand.textContent = round.computerChoice.emoji;
 }
 
 function updatePoints(round) {
-    if (round.winner === "player") {
-        playerPoints++
-    } else if (round.winner === "computer") {
-        computerPoints++
-    }
+    let roundStatus;
 
-    const playerPointsEl = document.querySelector("#player-points");
-    const computerPointsEl = document.querySelector("#computer-points");
+    if (round.winner === null) {
+        roundStatus = "You tied!";
+    } else if (round.winner === "player") {
+        playerPoints++
+        roundStatus = "You won!";
+    } else {
+        computerPoints++
+        roundStatus = "You lost :(";
+    }
 
     playerPointsEl.textContent = `${playerPoints} point(s)`;
     computerPointsEl.textContent = `${computerPoints} point(s)`;
+    gameStatus.textContent = roundStatus;
+}
+
+function checkScoreboard() {
+    let gameWinner;
+    const hasWinner = playerPoints === 5 || computerPoints === 5;
+
+    if (hasWinner && playerPoints > computerPoints) {
+        gameWinner = "You won the game!";
+    } else if (hasWinner && computerPoints > playerPoints) {
+        gameWinner = "You lost the game";
+    }
+
+    if (!gameWinner) return;
+
+    gameStatus.textContent = gameWinner;
 }
