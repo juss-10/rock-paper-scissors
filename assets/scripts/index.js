@@ -55,13 +55,13 @@ function playRound(playerChoice, computerChoice) {
 
     switch (playerChoice.hand) {
         case "rock":
-            winner = (computerChoice === "paper") ? "computer" : "player";
+            winner = (computerChoice.hand === "paper") ? "computer" : "player";
             break;
         case "paper":
-            winner = (computerChoice === "scissors") ? "computer" : "player";
+            winner = (computerChoice.hand === "scissors") ? "computer" : "player";
             break;
         case "scissors":
-            winner = (computerChoice === "rock") ? "computer" : "player";
+            winner = (computerChoice.hand === "rock") ? "computer" : "player";
             break;
     }
 
