@@ -39,6 +39,7 @@ function getPlayerObject(playerChoice) {
 function renderGame(e) {
     const round = playRound(getPlayerChoice(e), getComputerChoice());
     displayRound(round)
+    updatePoints(round)
 }
 
 function playRound(playerChoice, computerChoice) {
@@ -79,4 +80,18 @@ function displayRound(round) {
 
     playerHand.textContent = round.playerChoice.emoji;
     computerHand.textContent = round.computerChoice.emoji;
+}
+
+function updatePoints(round) {
+    if (round.winner === "player") {
+        playerPoints++
+    } else if (round.winner === "computer") {
+        computerPoints++
+    }
+
+    const playerPointsEl = document.querySelector("#player-points");
+    const computerPointsEl = document.querySelector("#computer-points");
+
+    playerPointsEl.textContent = `${playerPoints} point(s)`;
+    computerPointsEl.textContent = `${computerPoints} point(s)`;
 }
