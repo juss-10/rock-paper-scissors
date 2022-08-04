@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    font-family: "Mochiy Pop One", sans-serif;
+}
+
+html, body {
+    min-height: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(108, 83%, 23%);
+}
+
+a {
+    color: hsl(108, 46%, 65%);
+    text-decoration: none;
+    border-bottom: 1px dashed hsl(108, 46%, 65%);
+}
+
+a:hover {
+    border-bottom-style: solid;
+}
+
+.link-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.5em;
+}
+
+.link-icon::after {
+    content: "";
+    background: url("/assets/images/GitHub-Mark-Light-32px.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h1, h2 {
+    margin-top: 0;
+    font-family: "Mochiy Pop One", sans-serif;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    padding: 4em 1em;
+    background-color: hsl(34, 37%, 15%);
+}
+
+.site-header,
+.site-footer {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2em 0 0;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* BOARDGAME AND SCOREBOARD */
+
+.boardgame {
+    height: 100%;
+    padding-top: 2em;
+}
+
+.scoreboard-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 750px;
+    align-items: center;
+    margin-bottom: 4em;
+    /* text-align: center; */
+}
+
+.players {
+    display: flex;
+    align-self: stretch;
+    justify-content: space-around;
+    column-gap: 2.5em;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.25em;
+    flex: 1;
+}
+
+.vs {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.hand-container {
+    padding: 1em;
+    font-size: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+.hand,
+.hand-container {
+    border-radius: 30px;
+    border: 1px solid hsl(108, 68%, 31%);
+}
+
+.hand:hover,
+.hand-container:hover {
+    background-color: hsl(108, 70%, 29%);
+    border-color: hsl(108, 53%, 40%);
+}
+
+.btn {
+    cursor: pointer;
+}
+
+
+/* GAME HANDS */
+
+.game-hands {
+    display: flex;
+    justify-content: center;
+    column-gap: 2em;
+    margin-top: auto;
+    padding: 2em 1em;
+    border-top: 1px solid hsl(108, 68%, 31%);
+    align-self: stretch;
+}
+
+.game-hand-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.hand {
+    padding: 0.5em;
+    font-size: 2.75rem;
+}
+
+.hand-bg {
+    width: 60px;
+    height: 60px;
+}
+
+.site-footer {
+    margin-top: auto;
+    padding: 0.5em;
+    background-color: hsl(108, 77%, 22%);
+}
+
+@media (max-width: 650px) {
+    .players {
+        flex-direction: column;
+        row-gap: 4em;
+    }
+
+    .vs {
+        justify-content: center;
+    }
+
+    .game-hands {
+        flex-direction: column;
+        row-gap: 1em;
+    }
+
+    .game-hand-container {
+        align-items: stretch;
+    }
+
+    .hand {
+        display: none;
+    }
+
+    .hand-title {
+        background-color: darkgreen;
+        padding: 1em;
+        text-align: center;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .hand-title:hover {
+        background-color: rgb(1, 75, 1);
+    }
+}
