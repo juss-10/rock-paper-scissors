@@ -29,13 +29,13 @@ function getPlayerObject(playerChoice) {
 
     if (playerChoice === "rock") {
         playerObject.hand = "rock";
-        playerObject.emoji = "🪨";
+        playerObject.emoji = "✊";
     } else if (playerChoice === "paper") {
         playerObject.hand = "paper";
-        playerObject.emoji = "📃";
+        playerObject.emoji = "✋";
     } else {
         playerObject.hand = "scissors";
-        playerObject.emoji = "✂️";
+        playerObject.emoji = "✌️";
     }
 
     return playerObject;
@@ -128,10 +128,9 @@ function resetGame() {
     playAgainBtn.style.display = "none";
     playerPoints = 0;
     computerPoints = 0;
-    playerHand.textContent = "?";
-    computerHand.textContent = "?";
+    playerHand.textContent = "🤜";
+    computerHand.textContent = "🤛";
     playerPointsEl.textContent = "0 point(s)";
     computerPointsEl.textContent = "0 point(s)";
     gameStatus.textContent = "Let's get things rollin'";
-
 } 

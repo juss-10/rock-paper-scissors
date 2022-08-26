@@ -141,7 +141,6 @@ section {
 
 .hand,
 .hand-container {
-    font-family: "Noto Emoji", sans-serif;
     border-radius: 30px;
     border: 1px solid hsl(108, 68%, 31%);
 }
